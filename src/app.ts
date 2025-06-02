@@ -1,7 +1,7 @@
 // classes
 class Invoice {
-    public client: string;
-    public details: string;
+    readonly client: string;
+    private details: string;
     public amount: number;
 
     constructor(c: string, d: string, a: number) {
@@ -23,7 +23,6 @@ let invoices: Invoice[] = [];
 invoices.push(invOne);
 invoices.push(invTwo)
 
-invOne.client = 'Kristi'
 invTwo.amount = 1000;
 
 console.log(invOne, invTwo);
@@ -31,7 +30,7 @@ console.log(invOne, invTwo);
 console.log(invoices);
 
 invoices.forEach(invoice => {
-    console.log(invoice.client, invoice.amount, invoice.details, invoice.format());
+    console.log(invoice.client, invoice.amount, invoice.format());
 });
 
 
