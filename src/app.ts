@@ -1,7 +1,3 @@
-const anchor = document.querySelector('a');
+const anchor = document.querySelector('a')!;
 
-// console.log(anchor.href);
-
-if (anchor) {
-    console.log(anchor.href);
-}
+console.log(anchor.href);
