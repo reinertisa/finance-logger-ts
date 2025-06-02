@@ -1,3 +1,36 @@
+// classes
+class Invoice {
+    client: string;
+    details: string;
+    amount: number;
+
+    constructor(c: string, d: string, a: number) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+
+    // methods
+    format() {
+        return `${this.client} owes ${this.amount} for ${this.details}`
+    }
+}
+
+const invOne = new Invoice('Isa', 'work on the isa website', 250);
+const invTwo = new Invoice('Sade', 'work on the sade website', 300);
+
+let invoices: Invoice[] = [];
+invoices.push(invOne);
+invoices.push(invTwo)
+
+invOne.client = 'Kristi'
+invTwo.amount = 1000;
+
+console.log(invOne, invTwo);
+
+console.log(invoices);
+
+
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 
 // inputs
