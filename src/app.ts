@@ -1,5 +1,33 @@
 import { Invoice } from './classes/Invoice.js';
 
+interface IsPerson {
+    name: string
+    age: number
+    speak(a: string): void
+    spend(a: number): number
+}
+
+const me: IsPerson = {
+    name: 'isa',
+    age: 30,
+    speak(text: string):void {
+        console.log(text);
+    },
+    spend(amount: number): number {
+        console.log('I spent', amount);
+        return amount;
+    }
+};
+console.log(me);
+
+let someone: IsPerson;
+
+const greetPerson = (person: IsPerson) => {
+    console.log(`Hello ${person.name}`);
+}
+
+greetPerson(me)
+
 const invOne = new Invoice('Isa', 'work on the isa website', 250);
 const invTwo = new Invoice('Sade', 'work on the sade website', 300);
 
