@@ -1,4 +1,5 @@
 import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
 const me = {
     name: 'isa',
     age: 30,
@@ -16,6 +17,14 @@ const greetPerson = (person) => {
     console.log(`Hello ${person.name}`);
 };
 greetPerson(me);
+let docOne;
+let docTwo;
+docOne = new Invoice('Isa', 'web work', 250);
+docTwo = new Payment('Sade', 'plumbing work', 200);
+let docs = [];
+docs.push(docOne);
+docs.push(docTwo);
+console.log(docs);
 const invOne = new Invoice('Isa', 'work on the isa website', 250);
 const invTwo = new Invoice('Sade', 'work on the sade website', 300);
 let invoices = [];

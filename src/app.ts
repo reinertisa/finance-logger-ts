@@ -1,4 +1,6 @@
 import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
+import { HasFormatter } from './interfaces/HasFormatter.js';
 
 interface IsPerson {
     name: string
@@ -27,6 +29,18 @@ const greetPerson = (person: IsPerson) => {
 }
 
 greetPerson(me)
+
+let docOne: HasFormatter;
+let docTwo: HasFormatter;
+
+docOne = new Invoice('Isa', 'web work', 250);
+docTwo = new Payment('Sade', 'plumbing work', 200);
+
+let docs: HasFormatter[] = [];
+docs.push(docOne);
+docs.push(docTwo);
+
+console.log(docs);
 
 const invOne = new Invoice('Isa', 'work on the isa website', 250);
 const invTwo = new Invoice('Sade', 'work on the sade website', 300);
