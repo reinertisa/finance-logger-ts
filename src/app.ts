@@ -1,6 +1,7 @@
 import { Invoice } from './classes/Invoice.js';
 import { Payment } from './classes/Payment.js';
 import { HasFormatter } from './interfaces/HasFormatter.js';
+import {ListTemplate} from "./classes/ListTemplate";
 
 interface IsPerson {
     name: string
@@ -68,6 +69,10 @@ const toFrom = document.querySelector('#to-from') as HTMLInputElement;
 const details = document.querySelector('#details') as HTMLInputElement;
 const amount = document.querySelector('#amount') as HTMLInputElement;
 
+// list template instance
+const ul = document.querySelector('ul')!;
+const list = new ListTemplate(ul);
+
 form.addEventListener('submit', (e: Event) => {
     e.preventDefault();
 
@@ -80,4 +85,5 @@ form.addEventListener('submit', (e: Event) => {
     }
 
     console.log(doc);
+    list.render(doc, type.value, 'end');
 });
