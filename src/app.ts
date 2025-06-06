@@ -87,3 +87,31 @@ form.addEventListener('submit', (e: Event) => {
     console.log(doc);
     list.render(doc, type.value, 'end');
 });
+
+// GENERICS
+
+const addUID = <T>(obj: T) => {
+    let uid = Math.floor(Math.random() * 100);
+    return {...obj, uid};
+}
+
+let docThree = addUID({name: 'isa', age: 40});
+console.log(docThree.name)
+
+const addUIDTwo = <T extends object>(obj: T) => {
+    let uid = Math.floor(Math.random() * 100);
+    return {...obj, uid};
+}
+
+const docFour = addUIDTwo({name: 'sade', age: 50});
+console.log(docFour.age);
+
+
+const addUIDThree = <T extends {name: string}>(obj: T) => {
+    let uid = Math.floor(Math.random() * 100);
+    return {...obj, uid};
+}
+
+const docFive = addUIDThree({age: 30, name: 'Krist'});
+console.log(docFive.name);
+
