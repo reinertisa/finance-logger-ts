@@ -115,3 +115,30 @@ const addUIDThree = <T extends {name: string}>(obj: T) => {
 const docFive = addUIDThree({age: 30, name: 'Krist'});
 console.log(docFive.name);
 
+// generic with interfaces
+
+interface Resource<T> {
+    uid: number;
+    resourceName: string;
+    data: T
+}
+
+const docSix: Resource<string> = {
+    uid: 10,
+    resourceName: 'person',
+    data: 'isa',
+}
+
+const docSeven: Resource<object> = {
+    uid: 9,
+    resourceName: 'dogs',
+    data: {
+        name: 'isa',
+    }
+}
+
+const docEight: Resource<string[]> = {
+    uid: 1,
+    resourceName: 'cats',
+    data: ['isa', 'sade', 'krist'],
+}
