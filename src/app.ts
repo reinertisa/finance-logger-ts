@@ -142,3 +142,28 @@ const docEight: Resource<string[]> = {
     resourceName: 'cats',
     data: ['isa', 'sade', 'krist'],
 }
+
+
+// ENUMS
+
+enum ResourceType {
+    BOOK,
+    AUTHOR,
+    FILM,
+    DIRECTOR,
+    PERSON
+}
+
+interface ResourceTwo<T> {
+    uid: number,
+    resourceType: ResourceType
+    data: T
+}
+
+const docNine: ResourceTwo<object> = {
+    uid: 99,
+    resourceType: ResourceType.BOOK,
+    data: {
+        age: 19
+    }
+}
