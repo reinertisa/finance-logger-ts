@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="wrapper">
+    <h1>Finance Logger</h1>
+
+    <ul class="item-list">
+
+    </ul>
+</div>
+
+<footer>
+    <form class="new-item-form">
+        <label for="type">Type</label>
+        <div class="field">
+            <select id="type">
+                <option value="invoice">Invoice</option>
+                <option value="paymant">Payment</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="toFrom">To / From</label>
+            <input id="toFrom" type="text">
+        </div>
+
+        <div class="field">
+            <label for="details">Details</label>
+            <input id="details" type="text">
+        </div>
+        <button>Add</button>
+    </form>
+</footer>
+
+<script type="module" src="sandbox.ts"></script>
+</body>
+</html>
